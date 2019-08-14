@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>xkcd why</title>
+    <meta name="author" content="kidonng" />
+    <meta
+      name="description"
+      content="❓ Get a random question from xkcd list"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="xkcd why" />
+    <meta
+      property="og:description"
+      content="❓ Get a random question from xkcd list"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://xkcd-why.now.sh/" />
+    <meta name="twitter:card" content="summary" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css"
+    />
+    <style>
+      @keyframes expand {
+        0% {
+          left: -2ex;
+        }
+
+        20% {
+          left: -1.5ex;
+        }
+
+        40% {
+          left: -1ex;
+        }
+
+        60% {
+          left: -0.5ex;
+        }
+
+        80% {
+          left: 0;
+        }
+      }
+
+      .animate {
+        animation: expand 1s steps(1, end) infinite;
+      }
+
+      a,
+      a:hover {
+        color: inherit;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-1 is-spaced">
+            why<span class="is-inline-block is-clipped">
+              <span class="is-relative animate">....</span>
+            </span>
+          </h1>
+          <h2 class="subtitle">
+            <a href="https://github.com/kidonng/xkcd-why">GitHub</a>
+          </h2>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/ga-lite/dist/ga-lite.min.js"></script>
+    <script>
+      if (window.galite) {
+        galite('create', 'UA-140053908-5', 'auto')
+        galite('send', 'pageview')
+      }
+
+      const colors = [
+        'white',
+        'black',
+        'light',
+        'dark',
+        'primary',
+        'link',
+        'info',
+        'success',
+        'warning',
+        'danger'
+      ]
+      const index = Math.floor(Math.random() * colors.length)
+      document.querySelector('.hero').classList.add(`is-${colors[index]}`)
+
+      fetch('/api')
+        .then(res => res.text())
+        .then(question => {
+          const link = `<a title="Search on Google" href="https://www.google.com/search?q=${question}">${question}</a>`
+          document.querySelector('.title').innerHTML = link
+        })
+        .catch(
+          () =>
+            (document.querySelector('.title').innerHTML =
+              '<span title="*we asked this">why are there request errors</span>')
+        )
+    </script>
+  </body>
+</html>
