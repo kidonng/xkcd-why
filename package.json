@@ -8,7 +8,7 @@
     "got": "^9.6.0"
   },
   "devDependencies": {
-    "@now/node": "^0.12.5",
+    "@now/node": "^1.0.0",
     "@types/got": "^9.6.6",
     "prettier": "^1.18.2"
   },
