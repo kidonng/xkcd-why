@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    "esModuleInterop": true,
+    "sourceMap": true
   }
 }

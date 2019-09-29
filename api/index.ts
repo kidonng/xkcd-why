@@ -3,27 +3,26 @@ import { NowRequest, NowResponse } from '@now/node'
 
 export default async (
   { headers }: NowRequest,
-  { send, json, status }: NowResponse
+  { json, status }: NowResponse
 ) => {
   try {
-    const { body: rand } = await got('https://www.random.org/integers/', {
+    const { body: random } = await got('https://www.random.org/integers/', {
       query: {
         num: 1,
         min: 0,
-        max: 33170, // 0~33170 -> 1~33171
+        max: 33170, // 33171 questions
         col: 1,
         base: 10,
         format: 'plain',
         rnd: 'new'
       }
     })
-    const { body: why } = await got(
-      `${headers['x-now-deployment-url']}/why.txt`
-    )
+    const { body: questions } = await got(`${headers.host}/why.txt`)
+    const question = questions.split('\n')[parseInt(random)]
 
-    send(why.split('\n')[parseInt(rand)])
+    json({ question })
   } catch (e) {
-    status(500)
+    status(503)
     json(e)
   }
 }

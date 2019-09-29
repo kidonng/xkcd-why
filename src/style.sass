@@ -1,0 +1,27 @@
+@import '~bulma/bulma.sass'
+
+@keyframes expand
+  0%
+    left: -2ex
+
+  20%
+    left: -1.5ex
+
+  40%
+    left: -1ex
+
+  60%
+    left: -.5ex
+
+  80%
+    left: 0
+
+.animate
+  animation: expand 1s steps(1, end) infinite
+
+a,
+a:hover
+  color: inherit
+
+a:hover
+  text-decoration: underline
