@@ -14,7 +14,7 @@
     "got": "^9.6.0"
   },
   "devDependencies": {
-    "@now/node": "^1.0.0",
+    "@now/node": "^1.0.1",
     "@types/google.analytics": "^0.0.40",
     "@types/got": "^9.6.6",
     "parcel-bundler": "^1.12.3",
