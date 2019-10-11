@@ -21,7 +21,7 @@
     "parcel-plugin-static-files-copy": "^2.2.1",
     "prettier": "^1.18.2",
     "sass": "^1.23.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   },
   "prettier": {
     "semi": false,
