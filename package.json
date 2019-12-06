@@ -5,9 +5,6 @@
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --out-dir public"
   },
-  "engines": {
-    "node": "10.x"
-  },
   "dependencies": {
     "bulma": "^0.8.0",
     "ga-lite": "^2.0.5",
@@ -23,6 +20,10 @@
     "sass": "^1.23.7",
     "typescript": "^3.7.2"
   },
+  "browserslist": [
+    "last 2 Chrome version",
+    "last 2 Firefox version"
+  ],
   "prettier": {
     "semi": false,
     "singleQuote": true

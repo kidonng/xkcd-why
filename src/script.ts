@@ -18,13 +18,14 @@ const colors = [
 const index = Math.floor(Math.random() * colors.length)
 document.querySelector('.hero')!.classList.add(`is-${colors[index]}`)
 
-fetch('/api')
-  .then(res => res.json())
-  .then(({ question }) => {
+;(async () => {
+  try {
+    const res = await fetch('/api')
+    const { question } = await res.json()
     const link = `<a title="Search on Google" href="https://www.google.com/search?q=${question}">${question}</a>`
     document.querySelector('.title')!.innerHTML = link
-  })
-  .catch(() => {
-    const text = `<span title="*Failed to load the question">why are there request errors*</span>`
+  } catch {
+    const text = `<span title="Failed to load the question">why are there request errors</span>`
     document.querySelector('.title')!.innerHTML = text
-  })
+  }
+})()

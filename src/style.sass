@@ -1,23 +1,20 @@
 @import '~bulma/bulma.sass'
 
-@keyframes expand
-  0%
-    left: -2ex
+@keyframes loading
+  25%
+    left: -100%
 
-  20%
-    left: -1.5ex
+  50%
+    left: -.5em
 
-  40%
-    left: -1ex
+  75%
+    left: -.25em
 
-  60%
-    left: -.5ex
-
-  80%
+  100%
     left: 0
 
-.animate
-  animation: expand 1s steps(1, end) infinite
+.loading
+  animation: loading 1s steps(1, start) infinite
 
 a,
 a:hover
