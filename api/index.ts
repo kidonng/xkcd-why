@@ -4,7 +4,7 @@ import { NowRequest, NowResponse } from '@now/node'
 export default async (req: NowRequest, { json, status }: NowResponse) => {
   try {
     const { body: random } = await got('https://www.random.org/integers/', {
-      query: {
+      searchParams: {
         num: 1,
         min: 0,
         max: 33170, // 33171 questions
