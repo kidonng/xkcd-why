@@ -20,10 +20,11 @@ document.querySelector('.hero')!.classList.add(`is-${colors[index]}`)
 
 ;(async () => {
   try {
-    const res = await fetch('/api')
-    const { question } = await res.json()
+    const res = await fetch(`/api${location.hash? `?number=${location.hash.slice(1)}`:''}`)
+    const { number, question } = await res.json()
     const link = `<a title="Search on Google" href="https://www.google.com/search?q=${question}">${question}</a>`
     document.querySelector('.title')!.innerHTML = link
+    location.hash = number
   } catch {
     const text = `<span title="Failed to load the question">why are there request errors</span>`
     document.querySelector('.title')!.innerHTML = text

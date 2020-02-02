@@ -12,13 +12,18 @@ Get a truly random* question from https://xkcd.com/why.txt (it's missing now, bu
 
 ## API
 
-`GET /api`
+**GET** `/api`
 
 ```json
 {
-  "question": "why do you need this"
+  "number": 42,
+  "question": "why do utis hurt"
 }
 ```
+
+| Params | Type     | Description            |
+| ------ | -------- | ---------------------- |
+| number | *string* | Number of the question |
 
 ## Related
 
