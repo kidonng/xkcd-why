@@ -4,8 +4,8 @@ import { APIGatewayProxyHandler } from 'aws-lambda'
 export const handler: APIGatewayProxyHandler = async event => {
   try {
     let number
-    if (event.pathParameters && event.pathParameters.number)
-      number = parseInt(event.pathParameters.number)
+    if (event.queryStringParameters && event.queryStringParameters.number)
+      number = parseInt(event.queryStringParameters.number)
     else {
       const { body: random } = await got('https://www.random.org/integers/', {
         searchParams: {
