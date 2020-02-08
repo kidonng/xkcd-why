@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html && yarn build:functions",
     "build:functions": "netlify-lambda build api"
   },
   "dependencies": {
