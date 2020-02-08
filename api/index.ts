@@ -1,10 +1,11 @@
 import got from 'got'
-import { NowRequest, NowResponse } from '@now/node'
+import { APIGatewayProxyHandler } from 'aws-lambda'
 
-export default async ({ query }: NowRequest, { json, status }: NowResponse) => {
+export const handler: APIGatewayProxyHandler = async event => {
   try {
     let number
-    if (query.number) number = parseInt(query.number)
+    if (event.pathParameters && event.pathParameters.number)
+      number = parseInt(event.pathParameters.number)
     else {
       const { body: random } = await got('https://www.random.org/integers/', {
         searchParams: {
@@ -25,9 +26,14 @@ export default async ({ query }: NowRequest, { json, status }: NowResponse) => {
     )
     const question = questions.split('\n')[number]
 
-    json({ number, question })
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ number, question })
+    }
   } catch (e) {
-    status(503)
-    json(e)
+    return {
+      statusCode: 503,
+      body: JSON.stringify(e)
+    }
   }
 }
