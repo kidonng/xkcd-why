@@ -28,11 +28,14 @@ export const handler: APIGatewayProxyHandler = async event => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ number, question })
+      body: JSON.stringify({ number, question }),
+      headers: {
+        'content-type': 'application/json'
+      }
     }
   } catch (e) {
     return {
-      statusCode: 503,
+      statusCode: 500,
       body: JSON.stringify(e)
     }
   }
