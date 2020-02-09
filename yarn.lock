@@ -25,7 +25,7 @@
     invariant "^2.2.4"
     semver "^5.5.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.8.4":
+"@babel/core@7.8.4", "@babel/core@^7.0.0":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.8.4.tgz#d496799e5c12195b3602d0fddd77294e3e38e80e"
   integrity sha512-0LiLrB2PwrVI+a2/IEskBopDYSd8BCb3rOvH7D5tzoWd696TBEduBvuLVm4Nx6rltrLZqvI3MCalB2K2aVzQjA==
@@ -1359,7 +1359,7 @@
     js-levenshtein "^1.1.3"
     semver "^5.5.0"
 
-"@babel/preset-typescript@^7.8.3":
+"@babel/preset-typescript@7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.8.3.tgz#90af8690121beecd9a75d0cc26c6be39d1595d13"
   integrity sha512-qee5LgPGui9zQ0jR1TeU5/fP9L+ovoArklEqY12ek8P/wV5ZeM/VYSQYwICeoT6FfpJTekG9Ilay5PhwsOpMHA==
@@ -1532,7 +1532,7 @@
   dependencies:
     defer-to-connect "^1.1.1"
 
-"@types/aws-lambda@^8.10.40":
+"@types/aws-lambda@8.10.40":
   version "8.10.40"
   resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.40.tgz#d60b912a9425f74f60c57667a8c6b99d58df4ada"
   integrity sha512-D0hOUw2y6in/cPWv0JMMCBnO3Hc/DNeLi8QQ1wymwk9Eixh6IFgVnCGJnUHefjxKEAVxL7z6LKBsFUrIjKygRg==
@@ -5038,7 +5038,7 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-netlify-lambda@^1.6.3:
+netlify-lambda@1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.6.3.tgz#296d65b5f024d4872648f50664cf7a0e62ae8653"
   integrity sha512-nP5Ja6H/FmKSuagOOcLFizUmpuso1bzNvyo3HWU9dCpQ5Kmzt58k4oYUnSNTBc+lsi7ExZokAmtFRMAYAvWWNQ==
