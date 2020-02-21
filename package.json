@@ -14,7 +14,7 @@
   "devDependencies": {
     "@babel/core": "7.8.4",
     "@babel/preset-typescript": "7.8.3",
-    "@types/aws-lambda": "8.10.40",
+    "@types/aws-lambda": "8.10.44",
     "@types/google.analytics": "0.0.40",
     "@types/got": "9.6.9",
     "netlify-lambda": "1.6.3",
