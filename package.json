@@ -22,7 +22,7 @@
     "parcel-plugin-static-files-copy": "2.3.1",
     "prettier": "1.19.1",
     "sass": "1.26.1",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "browserslist": [
     "last 2 Chrome version",
