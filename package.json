@@ -7,7 +7,7 @@
     "build:functions": "netlify-lambda build api"
   },
   "dependencies": {
-    "bulma": "0.8.0",
+    "bulma": "0.8.2",
     "ga-lite": "2.0.5",
     "got": "11.1.4"
   },
