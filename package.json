@@ -9,7 +9,7 @@
   "dependencies": {
     "bulma": "0.8.0",
     "ga-lite": "2.0.5",
-    "got": "10.6.0"
+    "got": "11.1.4"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
