@@ -1,7 +1,0 @@
-[build]
-functions = "functions"
-
-[[redirects]]
-from = "/api"
-to = "/.netlify/functions/index"
-status = 200

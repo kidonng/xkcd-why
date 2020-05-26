@@ -1,11 +1,13 @@
 import got from 'got'
-import { APIGatewayProxyHandler } from 'aws-lambda'
+import { NowRequest, NowResponse } from '@vercel/node'
 
-export const handler: APIGatewayProxyHandler = async event => {
+export default async (
+  { headers, query }: NowRequest,
+  { json, status }: NowResponse
+) => {
   try {
-    let number
-    if (event.queryStringParameters && event.queryStringParameters.number)
-      number = parseInt(event.queryStringParameters.number)
+    let number: number
+    if (typeof query.number === 'string') number = parseInt(query.number)
     else {
       const { body: random } = await got('https://www.random.org/integers/', {
         searchParams: {
@@ -15,28 +17,20 @@ export const handler: APIGatewayProxyHandler = async event => {
           col: 1,
           base: 10,
           format: 'plain',
-          rnd: 'new'
-        }
+          rnd: 'new',
+        },
       })
       number = parseInt(random)
     }
 
     const { body: questions } = await got(
-      'https://cdn.jsdelivr.net/gh/kidonng/xkcd-why/api/why.txt'
+      `${headers['x-forwarded-proto']}://${headers.host}/why.txt`
     )
     const question = questions.split('\n')[number]
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ number, question }),
-      headers: {
-        'content-type': 'application/json'
-      }
-    }
+    json({ number, question })
   } catch (e) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify(e)
-    }
+    status(500)
+    json(e)
   }
 }

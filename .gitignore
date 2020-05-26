@@ -1,5 +1,5 @@
 .cache
-.netlify
 dist
-functions
 node_modules
+
+.vercel

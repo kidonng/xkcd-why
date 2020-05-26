@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html && yarn build:functions",
-    "build:functions": "netlify-lambda build api"
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "bulma": "0.8.2",
@@ -12,11 +11,8 @@
     "got": "11.1.4"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
-    "@babel/preset-typescript": "7.9.0",
-    "@types/aws-lambda": "8.10.51",
     "@types/google.analytics": "0.0.40",
-    "netlify-lambda": "1.6.3",
+    "@vercel/node": "^1.6.1",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-static-files-copy": "2.3.1",
     "prettier": "2.0.5",
