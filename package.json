@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
-    "@vercel/node": "^1.6.1",
+    "@vercel/node": "1.6.1",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-static-files-copy": "2.3.1",
     "prettier": "2.0.5",

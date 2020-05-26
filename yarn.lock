@@ -798,7 +798,7 @@
   dependencies:
     "@types/node" "*"
 
-"@vercel/node@^1.6.1":
+"@vercel/node@1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@vercel/node/-/node-1.6.1.tgz#03b08cb88a2ea82bb80603e81ae61e7e283ace5a"
   integrity sha512-sCxhMtShD2kCcpznmYO5HaCG3LaqaJVm0xZiJq8BuGIuSNWgS/aXi5IESFa01whsafaS7WhdMTlAwNPPOvH5lg==
