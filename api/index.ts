@@ -2,14 +2,21 @@ import got from 'got'
 import { NowRequest, NowResponse } from '@vercel/node'
 
 export default async (
-  { headers, query }: NowRequest,
-  { json, status }: NowResponse
+  {
+    headers: { 'x-forwarded-proto': proto, host },
+    query: { number },
+  }: NowRequest,
+  res: NowResponse
 ) => {
+  const { json, status } = res
+
   try {
-    let number: number
-    if (typeof query.number === 'string') number = parseInt(query.number)
-    else {
-      const { body: random } = await got('https://www.random.org/integers/', {
+    let num: number
+    if (typeof number === 'string') {
+      num = parseInt(number)
+      res.setHeader('Cache-Control', 's-maxage=31536000')
+    } else {
+      const random = await got('https://www.random.org/integers/', {
         searchParams: {
           num: 1,
           min: 0,
@@ -19,16 +26,14 @@ export default async (
           format: 'plain',
           rnd: 'new',
         },
-      })
-      number = parseInt(random)
+      }).text()
+      num = parseInt(random)
     }
 
-    const { body: questions } = await got(
-      `${headers['x-forwarded-proto']}://${headers.host}/why.txt`
-    )
-    const question = questions.split('\n')[number]
+    const questions = await got(`${proto}://${host}/why.txt`).text()
+    const question = questions.split('\n')[num]
 
-    json({ number, question })
+    json({ number: num, question })
   } catch (e) {
     status(500)
     json(e)

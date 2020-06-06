@@ -8,16 +8,16 @@ Get a truly random<sup>*</sup> question from [a list of random ones](https://web
 
 **GET** `/api`
 
+| Params   | Type     | Required | Description            |
+| -------- | -------- | :------: | ---------------------- |
+| `number` | *string* |    ❌     | Number of the question |
+
 ```json
 {
   "number": 42,
   "question": "why do utis hurt"
 }
 ```
-
-| Params | Type     | Description            |
-| ------ | -------- | ---------------------- |
-| number | *string* | Number of the question |
 
 ## Related
 
