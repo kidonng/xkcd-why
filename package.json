@@ -11,7 +11,7 @@
     "got": "11.1.4"
   },
   "devDependencies": {
-    "@types/google.analytics": "0.0.40",
+    "@types/google.analytics": "0.0.41",
     "@vercel/node": "1.6.1",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-static-files-copy": "2.3.1",
