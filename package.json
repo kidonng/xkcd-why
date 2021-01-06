@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "bulma": "0.8.2",
-    "ga-lite": "2.0.5",
+    "ga-lite": "2.1.0",
     "got": "11.1.4"
   },
   "devDependencies": {
